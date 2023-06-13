@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electrodomestico.Views.viewCrearCelular"
+             xmlns:local="clr-namespace:Electrodomestico.ViewModels"
+             >
+    <ContentPage.BindingContext>
+        <local:ViewModelsCelular></local:ViewModelsCelular>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout  VerticalOptions="CenterAndExpand" Padding="30">
+            <CollectionView
+                SelectionChangedCommand="{Binding ResultadoCelular}">
+
+            </CollectionView>
+
+            <Entry Text="{Binding Nombre}" Placeholder="Nombre" Margin="0,0,0,10"/>
+            <Entry Text="{Binding Modelo}" Placeholder="Modelo" Margin="0,0,0,20"/>
+            <Entry Text="{Binding FechaLanzamiento}" Placeholder="Fecha Lanzamiento" Margin="0,0,0,30"/>
+            <Entry Text="{Binding Voltaje}" Placeholder=" Voltaje" Margin="0,0,0,35"/>
+
+            <Label Text="Precio Compra"  FontSize="18"  TextColor="Black"  Margin="0,0,0,39"/>
+            <Entry Text="{Binding PrecioCompra}" Placeholder="Precio Compra" Margin="0,0,0,40"/>
+
+            <Entry Text="{Binding SistemaOperativo}" Placeholder="Sistema Operativo" Margin="0,0,0,50"/>
+            <Entry Text="{Binding OperadorRed}" Placeholder="Operador Red" Margin="0,0,0,60"/>
+
+            <Button Command="{Binding IrAResultadoCommand}" Text="Enviar Pedido" FontSize="18" BackgroundColor="Black" TextColor="White" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electrodomestico.Views.viewCategorias"
+             xmlns:local="clr-namespace:Electrodomestico.ViewModels"
+             >
+    <ContentPage.BindingContext>
+
+        <local:viewModelsCategoria>
+
+        </local:viewModelsCategoria>
+
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <StackLayout  VerticalOptions="CenterAndExpand"   Padding="30">
+            <Label Text="Electrodomesticos" HorizontalOptions="Center" FontSize="30"  
+                   TextColor="Blue" FontAttributes="Bold" Margin="0,0,0,20"/>
+
+            <!--aqui se realiza el enlace de la pagina categoria con crearcelular-->
+            <CollectionView   SelectionMode="Single" SelectedItem="{Binding ObjetoSelecionado}"
+                              ItemsSource="{Binding lista}"
+                   SelectionChangedCommand="{Binding redirigieCategoria}" >
+                <!--SelectionChangedCommand ejecuta un comando cada vez que seleccione un icono y lo llevara a una pagina-->
+                <!--SelectionMode="Single" selecciona objetos de la lista-->
+                <!--SelectedItem="{Binding ObjetoSelecionado}" se guarda el objeto seleccionado -->
+                <!--ItemsSource="{Binding lista}" la lista fuenta -->
+
+                <!--aqui se le da aspecto ala pagina-->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="50" Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" ></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Image Grid.Column="0" Grid.Row="0" Source="{Binding imagen}" Aspect="AspectFill"/>
+                            <Label FontSize="20" TextColor="Black" Grid.Column="1" Grid.Row="0" Text="{Binding nombre}"></Label>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

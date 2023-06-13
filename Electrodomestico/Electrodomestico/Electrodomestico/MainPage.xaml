@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electrodomestico.MainPage"
+             xmlns:local="clr-namespace:Electrodomestico.ViewModels"
+             >
+
+
+    <ContentPage.BindingContext>
+        <local:ViewModelsMainpage></local:ViewModelsMainpage>
+    </ContentPage.BindingContext>
+
+    <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
+        <Label Text="Iniciar Sesion" HorizontalOptions="Center" FontSize="30"  TextColor="Goldenrod" FontAttributes="Bold" Margin="0,0,0,20"/>
+
+        <Entry Text="{Binding CorreoElectronico}" Placeholder="Correo Electronico" Keyboard="Email" Margin="0,0,0,10"/>
+        <Entry Text="{Binding  Password}" Placeholder="Contraseña" IsPassword="True" Margin="0,0,0,20"/>
+
+        <Button Command="{Binding autenticar}" Text="Iniciar Sesion"  FontSize="18" BackgroundColor="Black" TextColor="White" />
+
+        <Button Command="{Binding navegarCrearUsuario}" Text="Crear Usuario"  FontSize="18" BackgroundColor="Black" TextColor="White" />
+
+        <Label Text="{Binding ResultadoAutenticacion}"></Label>
+        <Label Text="{Binding U.Password}" >
+
+        </Label>
+    </StackLayout>
+
+
+</ContentPage>

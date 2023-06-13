@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electrodomestico.Views.viewCreacionUsuario"
+             xmlns:local="clr-namespace:Electrodomestico.ViewModels"
+                 >
+
+    <ContentPage.BindingContext>
+        <local:viewModelCreacionUsuario></local:viewModelCreacionUsuario>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout      VerticalOptions="CenterAndExpand" Padding="30">
+            <Entry  Text="{Binding CorreoElectronico}" Placeholder="Correo Electronico" Keyboard="Email" Margin="0,0,0,10"/>
+            <Entry Text="{Binding Password}" Placeholder="Contraseña" IsPassword="True" Margin="0,0,0,20"/>
+
+            <Button Command="{Binding crearUsuario}" Text="Crear"  FontSize="18" BackgroundColor="Black" TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
