@@ -2,19 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Electrodomestico.Views.viewResultadoCelular"
-             xmlns:local="clr-namespace:Electrodomestico.ViewModels" >
+             xmlns:local="clr-namespace:Electrodomestico.ViewModels">
     <ContentPage.BindingContext>
         <local:ViewModelsResultadoCelular></local:ViewModelsResultadoCelular>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
-            <Label Text="{Binding ResultadoCelular.Nombre}" FontSize="18" TextColor="Black" Margin="0,0,0,10"/>
-            <Label Text="{Binding ResultadoCelular.Modelo}" FontSize="18" TextColor="Black" Margin="0,0,0,10"/>
-            <Label Text="{Binding ResultadoCelular.FechaLanzamiento}" FontSize="18" TextColor="Black" Margin="0,0,0,10"/>
-            <Label Text="{Binding ResultadoCelular.Voltaje}" FontSize="18" TextColor="Black" Margin="0,0,0,10"/>
-            <Label Text="{Binding ResultadoCelular.PrecioCompra}" FontSize="18" TextColor="Black" Margin="0,0,0,10"/>
-            <Label Text="{Binding ResultadoCelular.SistemaOperativo}" FontSize="18" TextColor="Black" Margin="0,0,0,10"/>
-            <Label Text="{Binding ResultadoCelular.OperadorRed}" FontSize="18" TextColor="Black" Margin="0,0,0,10"/>
+            <CollectionView   SelectedItem="{Binding ResultadoCelular}" 
+                              ItemsSource="{Binding listaCelulares}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="0,0,0,10">
+                                <Label Text="{Binding Nombre}" FontSize="18" TextColor="Black"/>
+                                <Label Text="{Binding Modelo}" FontSize="18" TextColor="Black"/>
+                                <Label Text="{Binding FechaLanzamiento}" FontSize="18" TextColor="Black"/>
+                                <Label Text="{Binding Voltaje}" FontSize="18" TextColor="Black"/>
+                                <Label Text="{Binding PrecioCompra}" FontSize="18" TextColor="Black"/>
+                                <Label Text="{Binding SistemaOperativo}" FontSize="18" TextColor="Black"/>
+                                <Label Text="{Binding OperadorRed}" FontSize="18" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
