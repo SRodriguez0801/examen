@@ -34,9 +34,9 @@ namespace Electrodomestico.ViewModels
             catch (FileNotFoundException)
             {
                 // El archivo no existe, se crea una nueva lista vacía
-                //u = new Usuarios();
+               
             }
-            ResultadoCelular = celular;
+           
         }
 
 
