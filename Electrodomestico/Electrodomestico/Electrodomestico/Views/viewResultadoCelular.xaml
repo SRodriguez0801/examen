@@ -8,7 +8,8 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
-            <CollectionView   SelectedItem="{Binding ResultadoCelular}" 
+            <Label Text="Resultado celular"></Label>
+            <CollectionView  
                               ItemsSource="{Binding listaCelulares}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -16,7 +17,7 @@
                             <StackLayout Margin="0,0,0,10">
                                 <Label Text="{Binding Nombre}" FontSize="18" TextColor="Black"/>
                                 <Label Text="{Binding Modelo}" FontSize="18" TextColor="Black"/>
-                                <Label Text="{Binding FechaLanzamiento}" FontSize="18" TextColor="Black"/>
+                              
                                 <Label Text="{Binding Voltaje}" FontSize="18" TextColor="Black"/>
                                 <Label Text="{Binding PrecioCompra}" FontSize="18" TextColor="Black"/>
                                 <Label Text="{Binding SistemaOperativo}" FontSize="18" TextColor="Black"/>

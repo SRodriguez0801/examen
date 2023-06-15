@@ -9,8 +9,8 @@ namespace Electrodomestico
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            //activacion de  nagacion   
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

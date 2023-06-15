@@ -14,8 +14,8 @@ namespace Electrodomestico.ViewModels
     {
         public List<DateTime> FechasMantenimiento { get; } = new List<DateTime>();
 
-        public ICommand IrAResultadoCommand { get; }
-        public ICommand AgregarCelular { get; }
+       
+        public Command AgregarCelular { get; }
 
         public ViewModelsCelular()
         {
@@ -46,7 +46,7 @@ namespace Electrodomestico.ViewModels
                 listaCelulares = new ObservableCollection<Models.Celular>();
             }
 
-            AgregarCelular = new Command(() =>
+            AgregarCelular = new Command(async () =>
             {
                 Models.Celular celular = new Models.Celular()
                 {
@@ -84,20 +84,12 @@ namespace Electrodomestico.ViewModels
                 }
 
                 LimpiarCampos();
+                var pagina = new viewResultadoCelular(ResultadoCelular);
+                await Application.Current.MainPage.Navigation.PushAsync(pagina);
+
             });
 
-            // Navegar a la siguiente página
-            /* IrAResultadoCommand = new Command(async () =>
-             {
-                 await Application.Current.MainPage.Navigation.PushAsync(new viewResultadoCelular());
-             });*/
-            IrAResultadoCommand = new Command(async () =>
-            {
-
-                var viewResultadoCelularPage = new viewResultadoCelular(ResultadoCelular);
-                await Application.Current.MainPage.Navigation.PushAsync(viewResultadoCelularPage);
-            });
-
+          
 
         }
 

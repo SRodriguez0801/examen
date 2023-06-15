@@ -14,6 +14,9 @@ namespace Electrodomestico.ViewModels
         private Celular resultadoCelular;
 
         public ViewModelsResultadoCelular()
+        { }
+
+        public ViewModelsResultadoCelular(Celular celular)
         {
             listaCelulares = new ObservableCollection<Celular>();
 
@@ -21,26 +24,22 @@ namespace Electrodomestico.ViewModels
             string ruta = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "celulares.bin");
             try
             {
-                if (File.Exists(ruta))
-                {
-                    byte[] data = File.ReadAllBytes(ruta);
-                    using (MemoryStream memory = new MemoryStream(data))
-                    {
-                        BinaryFormatter formatter = new BinaryFormatter();
-                        listaCelulares = (ObservableCollection<Celular>)formatter.Deserialize(memory);
-                    }
-                }
+                // Abrir y leer el archivo
+                byte[] data = File.ReadAllBytes(ruta);
+                MemoryStream memory = new MemoryStream(data);
+                BinaryFormatter formatter = new BinaryFormatter();
+                listaCelulares = (ObservableCollection<Celular>)formatter.Deserialize(memory);
+                memory.Close();
             }
-            catch (System.Exception ex)
+            catch (FileNotFoundException)
             {
-                Console.WriteLine("Error al abrir el archivo: " + ex.Message);
+                // El archivo no existe, se crea una nueva lista vacía
+                //u = new Usuarios();
             }
-        }
-
-        public ViewModelsResultadoCelular(Celular celular)
-        {
             ResultadoCelular = celular;
         }
+
+
         Celular resultado;
         public Celular ResultadoCelular
         {
