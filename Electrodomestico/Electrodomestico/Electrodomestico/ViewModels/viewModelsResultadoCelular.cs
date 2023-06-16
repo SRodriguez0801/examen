@@ -14,11 +14,8 @@ namespace Electrodomestico.ViewModels
         private Celular resultadoCelular;
 
         public ViewModelsResultadoCelular()
-        { }
-
-        public ViewModelsResultadoCelular(Celular celular)
         {
-            listaCelulares = new ObservableCollection<Celular>();
+            
 
             // Cargar la lista de celulares serializados
             string ruta = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "celulares.bin");
@@ -33,14 +30,10 @@ namespace Electrodomestico.ViewModels
             }
             catch (FileNotFoundException)
             {
-                // El archivo no existe, se crea una nueva lista vacía
-               
+                Application.Current.MainPage.DisplayAlert("Error","Error cargando Lista de Celulares","ok");
             }
-           
+
         }
-
-
-        Celular resultado;
         public Celular ResultadoCelular
         {
             get => resultadoCelular;

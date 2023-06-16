@@ -8,11 +8,11 @@ namespace Electrodomestico.Views
 
     public partial class viewResultadoCelular : ContentPage
     {
-        public viewResultadoCelular(Celular celular)
+        public viewResultadoCelular()
         {
 
             InitializeComponent();
-            BindingContext = new ViewModelsResultadoCelular(celular);
+           
         }
     }
 }
