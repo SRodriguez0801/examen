@@ -42,6 +42,8 @@ namespace Electrodomestico.ViewModels
                         break;
 
                     case "Estufa":
+                        var pagina1 = new viewCrearEstufa();
+                        Application.Current.MainPage.Navigation.PushAsync(pagina1);
                         break;
 
                     case "Videojuegos":
