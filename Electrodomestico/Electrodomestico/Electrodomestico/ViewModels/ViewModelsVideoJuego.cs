@@ -11,14 +11,12 @@ using Xamarin.Forms;
 
 namespace Electrodomestico.ViewModels
 {
-    public class viewModelsEstufa : INotifyPropertyChanged
+    public class ViewModelsVideoJuego : INotifyPropertyChanged
     {
         public List<DateTime> FechasMantenimiento { get; } = new List<DateTime>();
+        public Command AgregarVideo { get; }
 
-
-        public Command AgregarEstufa { get; }
-
-        public viewModelsEstufa()
+        public ViewModelsVideoJuego()
         {
             // Rutina para abrir el archivo de lista de celulares
             string ruta = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "celulares.bin");
@@ -30,13 +28,13 @@ namespace Electrodomestico.ViewModels
                     byte[] data = File.ReadAllBytes(ruta);
                     MemoryStream memory = new MemoryStream(data);
                     BinaryFormatter formatter = new BinaryFormatter();
-                    listaEstufa = (ObservableCollection<Models.Estufa>)formatter.Deserialize(memory);
+                    listaVideo = (ObservableCollection<Models.VideoJuegos>)formatter.Deserialize(memory);
                     memory.Close();
                 }
                 else
                 {
                     // El archivo no existe, se crea una nueva lista vacía
-                    listaEstufa = new ObservableCollection<Models.Estufa>();
+                    listaVideo = new ObservableCollection<Models.VideoJuegos>();
                 }
             }
             catch (Exception ex)
@@ -44,25 +42,28 @@ namespace Electrodomestico.ViewModels
                 // Manejar la excepción al abrir el archivo
                 // Aquí puedes agregar tu lógica personalizada para manejar el error
                 Console.WriteLine("Error al abrir el archivo: " + ex.Message);
-                listaEstufa = new ObservableCollection<Models.Estufa>();
+                listaVideo = new ObservableCollection<Models.VideoJuegos>();
             }
-            AgregarEstufa = new Command(async () =>
+
+            AgregarVideo = new Command(async () =>
             {
-                Models.Estufa estufa = new Models.Estufa()
+                Models.VideoJuegos videoJuegos = new Models.VideoJuegos()
                 {
-                    Nombre = this.Nombre,
+                    Nombre_Juego = this.Nombre_Juego,
                     Modelo = this.Modelo,
                     FechaLanzamiento = this.FechaLanzamiento,
                     Voltaje = this.Voltaje,
                     PrecioCompra = this.PrecioCompra,
-                    cantidad_Ornillas = this.cantidad_Ornillas
+                    Empresa_Creadora = this.Empresa_Creadora,
 
+                    
                 };
-                CalcularPrecioVenta(estufa);
-                listaEstufa.Add(estufa);
+
+                CalcularPrecioVenta(videoJuegos);
+                listaVideo.Add(videoJuegos);
                 AgregarMantenimiento(DateTime.Now);
 
-                ResultadoEstufa = estufa;
+                Resultadovideo = videoJuegos;
 
                 // Rutina para serializar la lista de celulares
                 try
@@ -70,7 +71,7 @@ namespace Electrodomestico.ViewModels
                     BinaryFormatter formatter = new BinaryFormatter();
                     using (MemoryStream memory = new MemoryStream())
                     {
-                        formatter.Serialize(memory, listaEstufa);
+                        formatter.Serialize(memory, listaVideo);
                         byte[] serializedData = memory.ToArray();
                         File.WriteAllBytes(ruta, serializedData);
                     }
@@ -83,44 +84,41 @@ namespace Electrodomestico.ViewModels
                 }
 
                 LimpiarCampos();
-
-                //nos dirije a otra pagina
-                var pagina1 = new viewResultadoEstufa();
-                await Application.Current.MainPage.Navigation.PushAsync(pagina1);
+                var pagina = new viewResultadoVideoJuego();
+                await Application.Current.MainPage.Navigation.PushAsync(pagina);
 
             });
+
         }
-
-            public void AgregarMantenimiento(DateTime fecha)
-            {
-                if (listaEstufa.Count > 0)
-                {
-                listaEstufa[listaEstufa.Count - 1].FechasMantenimiento.Add(fecha);
-                }
-            }
-
-        public ObservableCollection<Models.Estufa> listaEstufa { get; set; }
-
-        string nombre;
-        public string Nombre
+        public void AgregarMantenimiento(DateTime fecha)
         {
-            get => nombre;
+            if (listaVideo.Count > 0)
+            {
+                listaVideo[listaVideo.Count - 1].FechasMantenimiento.Add(fecha);
+            }
+        }
+        public ObservableCollection<Models.VideoJuegos> listaVideo { get; set; }
+
+        string nombre_juego;
+        public string Nombre_Juego
+        {
+            get => nombre_juego;
             set
             {
-                nombre = value;
-                OnPropertyChanged(nameof(Nombre));
+                nombre_juego = value;
+                OnPropertyChanged(nameof(Nombre_Juego));
             }
         }
         string modelo;
         public string Modelo
-        {   get => modelo;
+        {
+            get => modelo;
             set
             {
                 modelo = value;
                 OnPropertyChanged(nameof(Modelo));
             }
         }
-
         DateTime fechaLanzamiento;
         public DateTime FechaLanzamiento
         {
@@ -131,7 +129,6 @@ namespace Electrodomestico.ViewModels
                 OnPropertyChanged(nameof(FechaLanzamiento));
             }
         }
-
         string voltaje;
         public string Voltaje
         {
@@ -142,7 +139,6 @@ namespace Electrodomestico.ViewModels
                 OnPropertyChanged(nameof(Voltaje));
             }
         }
-
         decimal precioCompra;
         public decimal PrecioCompra
         {
@@ -153,46 +149,47 @@ namespace Electrodomestico.ViewModels
                 OnPropertyChanged(nameof(PrecioCompra));
             }
         }
+        
 
-        int cantidad_ornillas;
-        public int cantidad_Ornillas
+        string empresa_creadora;
+        public string Empresa_Creadora
         {
-            get => cantidad_ornillas;
+            get => empresa_creadora;
             set
             {
-                cantidad_ornillas = value;
-                OnPropertyChanged(nameof(cantidad_Ornillas));
+                empresa_creadora = value;
+                OnPropertyChanged(nameof(Empresa_Creadora));
             }
         }
-
-        Models.Estufa resultadoEstufa;
-        public Models.Estufa ResultadoEstufa
+        Models.VideoJuegos  resultadovideo;
+        public Models.VideoJuegos Resultadovideo
         {
-            get => resultadoEstufa;
+            get => resultadovideo;
             set
             {
-                resultadoEstufa = value;
-                OnPropertyChanged(nameof (ResultadoEstufa));
+                resultadovideo = value;
+                OnPropertyChanged(nameof(Resultadovideo));
             }
         }
+    
         public event PropertyChangedEventHandler PropertyChanged;
-
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         public void LimpiarCampos()
         {
-            Nombre = string.Empty;
+            Nombre_Juego = string.Empty;
             Modelo = string.Empty;
             FechaLanzamiento = DateTime.MinValue;
             Voltaje = string.Empty;
             PrecioCompra = 0.0m;
-
+            Empresa_Creadora = string.Empty;
         }
-        public void CalcularPrecioVenta(Models.Estufa estufa)
+        public void CalcularPrecioVenta(Models.VideoJuegos videoJuegos)
         {
-            estufa.PrecioVenta = estufa.PrecioCompra * 1.45m;
+            videoJuegos.PrecioVenta = videoJuegos.PrecioCompra * 1.50m;
         }
+
     }
 }

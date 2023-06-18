@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electrodomestico.Views.viewResultadoVideoJuego"
+             xmlns:local="clr-namespace:Electrodomestico.ViewModels">
+
+    <ContentPage.BindingContext>
+        <local:viewModelsResultadoVideoJuego></local:viewModelsResultadoVideoJuego>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
+            <Label Text="Resultado VideoJuegos"></Label>
+            <CollectionView  
+                              ItemsSource="{Binding listaVideo}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BackgroundColor="LightGray" Padding="10" Margin="0,0,0,10">
+
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Nombre_Juego}" Grid.Row="0" Grid.Column="0" FontSize="16" FontAttributes="Bold" TextColor="Black"></Label>
+
+                            <Label Text="{Binding Modelo}" Grid.Row="1" Grid.Column="0" FontSize="14" TextColor="Gray" ></Label>
+
+                            <Label Text="{Binding Voltaje}" Grid.Row="0" Grid.Column="1" FontSize="14" TextColor="DarkGreen" ></Label>
+
+                            <Label Text="{Binding PrecioCompra}" Grid.Row="1" Grid.Column="1" FontSize="14" TextColor="DarkRed" ></Label>
+
+                            <Label Text="{Binding PrecioVenta}" Grid.Row="1" Grid.Column="4" ></Label>
+
+                            <Label Text="{Binding Empresa_Creadora}" Grid.Row="1" Grid.Column="5" ></Label>
+
+
+
+
+                        </Grid>
+
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

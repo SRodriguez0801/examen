@@ -1,28 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Electrodomestico.Views.viewCrearEstufa"
+             x:Class="Electrodomestico.Views.viewCrearVideoJuego"
              xmlns:local="clr-namespace:Electrodomestico.ViewModels">
-    
+
     <ContentPage.BindingContext>
-        <local:viewModelsEstufa></local:viewModelsEstufa>
+        <local:ViewModelsVideoJuego></local:ViewModelsVideoJuego>
     </ContentPage.BindingContext>
-    
     <ContentPage.Content>
-        
-        <StackLayout  VerticalOptions="CenterAndExpand" >
-            
-            <Entry Text="{Binding Nombre}" Placeholder="Nombre" Margin="0,0,0,10"/>
+        <StackLayout>
+
+            <Label VerticalOptions="CenterAndExpand" Padding ="30" />
+
+            <Entry Text="{Binding Nombre_Juego}" Placeholder="Nombre Juego" Margin="0,0,0,10"/>
+           
             <Entry Text="{Binding Modelo}" Placeholder="Modelo" Margin="0,0,0,20"/>
-            <DatePicker Date="{Binding FechaLanzamiento}"  Margin="0,0,0,30"/>
+            
+            <DatePicker Date ="{Binding FechaLanzamiento}"  Margin="0,0,0,30"/>
+            
             <Entry Text="{Binding Voltaje}" Placeholder=" Voltaje" Margin="0,0,0,35"/>
 
             <Label Text="Precio Compra"  FontSize="18"  TextColor="Black"  Margin="0,0,0,39"/>
             <Entry Text="{Binding PrecioCompra}" Placeholder="Precio Compra" Margin="0,0,0,40"/>
-            <Entry Text="{Binding cantidad_Ornillas}" Placeholder="Cantidad Ornillas" Margin="0,0,0,45"/>
-        
-            <Button Command="{Binding AgregarEstufa}" Text="Enviar Pedido" FontSize="18" BackgroundColor="Black" TextColor="White" />
 
+            <Entry Text="{Binding Empresa_Creadora}" Placeholder="Empresa Creadora" Margin="0,0,0,50"/>
+
+
+            <Button Command="{Binding AgregarVideo}" Text="Enviar Pedido" FontSize="18" BackgroundColor="Black" TextColor="White" />
 
 
         </StackLayout>

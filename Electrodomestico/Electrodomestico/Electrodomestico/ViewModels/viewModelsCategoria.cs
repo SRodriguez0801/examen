@@ -47,7 +47,10 @@ namespace Electrodomestico.ViewModels
                         break;
 
                     case "Videojuegos":
+                        var pagina2 = new viewCrearVideoJuego();
+                        Application.Current.MainPage.Navigation.PushAsync(pagina2);
                         break;
+
                     default:
                         Application.Current.MainPage.DisplayAlert("Alerta", "No se encontro el Objeto", "Cancel");
                         break;

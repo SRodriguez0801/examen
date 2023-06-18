@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Electrodomestico.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+
 	public partial class viewResultadoEstufa : ContentPage
 	{
 		public viewResultadoEstufa ()
