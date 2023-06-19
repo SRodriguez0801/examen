@@ -2,9 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Electrodomestico.Views.viewCrearVideoJuego"
+<<<<<<< HEAD
              xmlns:local="clr-namespace:Electrodomestico.ViewModels"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              >
+=======
+             xmlns:local="clr-namespace:Electrodomestico.ViewModels">
+>>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
 
     <ContentPage.BindingContext>
         <local:ViewModelsVideoJuego></local:ViewModelsVideoJuego>
@@ -15,11 +19,19 @@
             <Label VerticalOptions="CenterAndExpand" Padding ="30" />
 
             <Entry Text="{Binding Nombre_Juego}" Placeholder="Nombre Juego" Margin="0,0,0,10"/>
+<<<<<<< HEAD
 
             <Entry Text="{Binding Modelo}" Placeholder="Modelo" Margin="0,0,0,20"/>
 
             <DatePicker Date="{Binding FechaLanzamiento}" Margin="0,0,0,30" MinimumDate="{x:Static sys:DateTime.Now}" />
 
+=======
+           
+            <Entry Text="{Binding Modelo}" Placeholder="Modelo" Margin="0,0,0,20"/>
+            
+            <DatePicker Date ="{Binding FechaLanzamiento}"  Margin="0,0,0,30"/>
+            
+>>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
             <Entry Text="{Binding Voltaje}" Placeholder=" Voltaje" Margin="0,0,0,35"/>
 
             <Label Text="Precio Compra"  FontSize="18"  TextColor="Black"  Margin="0,0,0,39"/>

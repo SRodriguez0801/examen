@@ -10,7 +10,11 @@
     <ContentPage.Content>
 
         <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
+<<<<<<< HEAD
             <Label Text="Resultado VideoJuegos" FontSize="20"  TextColor="Black" FontAttributes="Bold" ></Label>
+=======
+            <Label Text="Resultado VideoJuegos"></Label>
+>>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
             <CollectionView  
                               ItemsSource="{Binding listaVideo}">
                 <CollectionView.ItemTemplate>
@@ -27,6 +31,7 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
+<<<<<<< HEAD
 
                             <Label Text="Nombre Juego"   Grid.Row="0" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding Nombre_Juego}"  Grid.Row="0" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue"></Label>
@@ -46,6 +51,19 @@
                             <Label Text="Fecha Lanzamiento"   Grid.Row="5" Grid.Column="0" FontSize="18"  TextColor="Black" FontAttributes="Bold" Margin="0,0,0,39"/>
                             <Label Text="{Binding FechaLanzamiento}" Grid.Row="5" Grid.Column="1" FontSize="18"  TextColor="Blue" FontAttributes="Bold" Margin="0,0,0,40" ></Label>
 
+=======
+                            <Label Text="{Binding Nombre_Juego}" Grid.Row="0" Grid.Column="0" FontSize="16" FontAttributes="Bold" TextColor="Black"></Label>
+
+                            <Label Text="{Binding Modelo}" Grid.Row="1" Grid.Column="0" FontSize="14" TextColor="Gray" ></Label>
+
+                            <Label Text="{Binding Voltaje}" Grid.Row="0" Grid.Column="1" FontSize="14" TextColor="DarkGreen" ></Label>
+
+                            <Label Text="{Binding PrecioCompra}" Grid.Row="1" Grid.Column="1" FontSize="14" TextColor="DarkRed" ></Label>
+
+                            <Label Text="{Binding PrecioVenta}" Grid.Row="1" Grid.Column="4" ></Label>
+
+                            <Label Text="{Binding Empresa_Creadora}" Grid.Row="1" Grid.Column="5" ></Label>
+>>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
 
 
 

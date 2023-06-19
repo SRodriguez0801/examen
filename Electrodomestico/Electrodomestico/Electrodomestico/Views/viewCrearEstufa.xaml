@@ -2,10 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Electrodomestico.Views.viewCrearEstufa"
+<<<<<<< HEAD
              xmlns:local="clr-namespace:Electrodomestico.ViewModels"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              >
 
+=======
+             xmlns:local="clr-namespace:Electrodomestico.ViewModels">
+    
+>>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
     <ContentPage.BindingContext>
         <local:viewModelsEstufa></local:viewModelsEstufa>
     </ContentPage.BindingContext>
