@@ -1,23 +1,20 @@
-﻿using System;
+﻿using Electrodomestico.Models;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
-using Electrodomestico.Models;
-using Electrodomestico.Views;
-using Xamarin.Forms;
+using System.Text;
 
 namespace Electrodomestico.ViewModels
 {
-    public class ViewModelsResultadoCelular : INotifyPropertyChanged
+    public class viewModelsResultadoVideoJuego : INotifyPropertyChanged
     {
-        private Celular resultadoCelular;
+        private VideoJuegos resultadoVideoJuego;
 
-        
-        public Command SalirCelular { get; }
-
-        public ViewModelsResultadoCelular()
+        public viewModelsResultadoVideoJuego()
         {
             // Cargar la lista de celulares serializados
             string ruta = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "celulares.bin");
@@ -27,37 +24,26 @@ namespace Electrodomestico.ViewModels
                 byte[] data = File.ReadAllBytes(ruta);
                 MemoryStream memory = new MemoryStream(data);
                 BinaryFormatter formatter = new BinaryFormatter();
-                listaCelulares = (ObservableCollection<Celular>)formatter.Deserialize(memory);
+                listaVideo = (ObservableCollection<VideoJuegos>)formatter.Deserialize(memory);
                 memory.Close();
             }
             catch (FileNotFoundException)
             {
-                Application.Current.MainPage.DisplayAlert("Error", "Error cargando Lista de Celulares", "ok");
+          
             }
 
+        }
+        public VideoJuegos ResultadoVideoJuego { 
             
-
-            SalirCelular = new Command(Salir);
-
-        }
-
-        public void Salir()
-        {
-            // Cerrar la aplicación
-            System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
-        }
-
-
-        public Celular ResultadoCelular
-        {
-            get => resultadoCelular;
+            get => resultadoVideoJuego;
             set
             {
-                resultadoCelular = value; OnPropertyChanged(nameof(ResultadoCelular));
+                resultadoVideoJuego = value; OnPropertyChanged(nameof(ResultadoVideoJuego));
             }
+        
         }
+        public ObservableCollection<VideoJuegos> listaVideo { get; set; } = new ObservableCollection<VideoJuegos>();
 
-        public ObservableCollection<Celular> listaCelulares { get; set; } = new ObservableCollection<Celular>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -65,5 +51,6 @@ namespace Electrodomestico.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
     }
 }

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Electrodomestico.Views.viewResultadoVideoJuego"
+             xmlns:local="clr-namespace:Electrodomestico.ViewModels">
+
+    <ContentPage.BindingContext>
+        <local:viewModelsResultadoVideoJuego></local:viewModelsResultadoVideoJuego>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
+            <Label Text="Resultado VideoJuegos" FontSize="20"  TextColor="Black" FontAttributes="Bold" ></Label>
+            <CollectionView  
+                              ItemsSource="{Binding listaVideo}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BackgroundColor="LightGray" Padding="10" Margin="0,0,0,10">
+
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Label Text="Nombre Juego"   Grid.Row="0" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
+                            <Label Text="{Binding Nombre_Juego}"  Grid.Row="0" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue"></Label>
+
+                            <Label Text="Modelo"   Grid.Row="1" Grid.Column="0" FontSize="18"  TextColor="Black"  FontAttributes="Bold" Margin="0,0,0,39"/>
+                            <Label Text="{Binding Modelo}" Grid.Row="1" Grid.Column="1" FontSize="18" TextColor="Blue" FontAttributes="Bold" ></Label>
+
+                            <Label Text="Voltaje"   Grid.Row="2" Grid.Column="0" FontSize="18"  TextColor="Black" FontAttributes="Bold" Margin="0,0,0,39"/>
+                            <Label Text="{Binding Voltaje}" Grid.Row="2" Grid.Column="1" FontSize="18" TextColor="Blue" FontAttributes="Bold" ></Label>
+
+                            <Label Text="Precio Venta"   Grid.Row="3" Grid.Column="0" FontSize="18"  TextColor="Black" FontAttributes="Bold" Margin="0,0,0,39"/>
+                            <Label Text="{Binding PrecioVenta}" Grid.Row="3" Grid.Column="1"  FontSize="18"  TextColor="Blue" FontAttributes="Bold" Margin="0,0,0,40" ></Label>
+
+                            <Label Text="Empresa Creadora"   Grid.Row="4" Grid.Column="0" FontSize="18"  TextColor="Black" FontAttributes="Bold" Margin="0,0,0,39"/>
+                            <Label Text="{Binding Empresa_Creadora}" Grid.Row="4" Grid.Column="1" FontSize="18"  TextColor="Blue" FontAttributes="Bold" Margin="0,0,0,40" ></Label>
+
+                            <Label Text="Fecha Lanzamiento"   Grid.Row="5" Grid.Column="0" FontSize="18"  TextColor="Black" FontAttributes="Bold" Margin="0,0,0,39"/>
+                            <Label Text="{Binding FechaLanzamiento}" Grid.Row="5" Grid.Column="1" FontSize="18"  TextColor="Blue" FontAttributes="Bold" Margin="0,0,0,40" ></Label>
+
+
+
+
+
+                        </Grid>
+
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

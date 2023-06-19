@@ -84,6 +84,7 @@ namespace Electrodomestico.ViewModels
                 }
 
                 LimpiarCampos();
+
                 var pagina = new viewResultadoCelular();
                 await Application.Current.MainPage.Navigation.PushAsync(pagina);
 
