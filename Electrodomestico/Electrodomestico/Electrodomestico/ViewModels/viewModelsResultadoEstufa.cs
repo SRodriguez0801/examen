@@ -33,7 +33,7 @@ namespace Electrodomestico.ViewModels
             }
             catch (FileNotFoundException)
             {
-                
+
             }
 
 
@@ -46,8 +46,8 @@ namespace Electrodomestico.ViewModels
             // Cerrar la aplicación
             System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
         }
-    
-            public Estufa ResultadoEstufa
+
+        public Estufa ResultadoEstufa
         {
             get => resultadoEstufa;
             set
@@ -58,7 +58,7 @@ namespace Electrodomestico.ViewModels
         public ObservableCollection<Estufa> listaEstufa { get; set; } = new ObservableCollection<Estufa>();
 
         public event PropertyChangedEventHandler PropertyChanged;
-     
+
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

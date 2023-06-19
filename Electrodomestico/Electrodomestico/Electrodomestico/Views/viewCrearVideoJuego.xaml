@@ -15,9 +15,9 @@
             <Label VerticalOptions="CenterAndExpand" Padding ="30" />
 
             <Entry Text="{Binding Nombre_Juego}" Placeholder="Nombre Juego" Margin="0,0,0,10"/>
-           
+
             <Entry Text="{Binding Modelo}" Placeholder="Modelo" Margin="0,0,0,20"/>
-            
+
             <DatePicker Date="{Binding FechaLanzamiento}" Margin="0,0,0,30" MinimumDate="{x:Static sys:DateTime.Now}" />
 
             <Entry Text="{Binding Voltaje}" Placeholder=" Voltaje" Margin="0,0,0,35"/>

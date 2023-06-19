@@ -8,7 +8,7 @@
     </ContentPage.BindingContext>
 
 
-<ContentPage.Content>
+    <ContentPage.Content>
 
         <StackLayout  VerticalOptions="CenterAndExpand" Padding="30" >
 
@@ -29,13 +29,13 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            
+
                             <Label Text="Nombre" Grid.Row="0" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue"></Label>
-                           
+
                             <Label Text="Modelo" Grid.Row="1" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding Modelo}" Grid.Row="1" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue" ></Label>
-                            
+
                             <Label Text="Voltaje" Grid.Row="2" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding Voltaje}" Grid.Row="2" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue"  ></Label>
 

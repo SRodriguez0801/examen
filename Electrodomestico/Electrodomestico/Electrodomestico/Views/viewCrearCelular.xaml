@@ -11,10 +11,10 @@
     <ContentPage.Content>
 
         <StackLayout  VerticalOptions="CenterAndExpand" Padding="30">
-          
+
             <Entry Text="{Binding Nombre}" Placeholder="Nombre" Margin="0,0,0,10"/>
             <Entry Text="{Binding Modelo}" Placeholder="Modelo" Margin="0,0,0,20"/>
-            
+
             <DatePicker Date="{Binding FechaLanzamiento}" Margin="0,0,0,30" MinimumDate="{x:Static sys:DateTime.Now}" />
 
 
