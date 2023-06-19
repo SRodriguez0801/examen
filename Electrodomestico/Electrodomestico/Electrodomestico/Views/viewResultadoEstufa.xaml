@@ -8,24 +8,15 @@
     </ContentPage.BindingContext>
 
 
-<<<<<<< HEAD
-    <ContentPage.Content>
-
-        <StackLayout  VerticalOptions="CenterAndExpand" Padding="30" >
-
-            <Label Text="Resultado Estufa"  FontSize="20"  TextColor="Black" FontAttributes="Bold"  ></Label>
-=======
 <ContentPage.Content>
 
         <StackLayout  VerticalOptions="CenterAndExpand" Padding="30" >
 
-            <Label Text="Resultado Estufa"></Label>
->>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
+            <Label Text="Resultado Estufa"  FontSize="20"  TextColor="Black" FontAttributes="Bold"  ></Label>
             <CollectionView  
                               ItemsSource="{Binding listaEstufa}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-<<<<<<< HEAD
                         <Grid BackgroundColor="LightGray" Padding="10" Margin="0,0,0,10">
 
 
@@ -38,13 +29,13 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-
+                            
                             <Label Text="Nombre" Grid.Row="0" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue"></Label>
-
+                           
                             <Label Text="Modelo" Grid.Row="1" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding Modelo}" Grid.Row="1" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue" ></Label>
-
+                            
                             <Label Text="Voltaje" Grid.Row="2" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding Voltaje}" Grid.Row="2" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue"  ></Label>
 
@@ -56,31 +47,6 @@
 
                             <Label Text="Fecha Lanzamiento" Grid.Row="5" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding FechaLanzamiento}" Grid.Row="5" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue"  ></Label>
-=======
-                        <Grid>
-
-
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="50" ></RowDefinition>
-                            </Grid.RowDefinitions>
-
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="0"></Label>
-
-                            <Label Text="{Binding Modelo}" Grid.Row="1" Grid.Column="1" ></Label>
-
-                            <Label Text="{Binding Voltaje}" Grid.Row="1" Grid.Column="2"></Label>
-
-                            <Label Text="{Binding PrecioCompra}" Grid.Row="1" Grid.Column="3" ></Label>
-
-                            <Label Text="{Binding PrecioVenta}" Grid.Row="1" Grid.Column="4" ></Label>
-
-                            <Label Text="{Binding cantidad_Ornillas}" Grid.Row="1" Grid.Column="5" ></Label>
-
->>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
 
 
 
@@ -89,11 +55,7 @@
                 </CollectionView.ItemTemplate>
 
             </CollectionView>
-<<<<<<< HEAD
             <Button Command="{Binding SalirEstufa}" Grid.Row="11" Grid.Column="1" Text="Salir" FontSize="18" BackgroundColor="Black" TextColor="White" />
-=======
-
->>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
 
         </StackLayout>
     </ContentPage.Content>

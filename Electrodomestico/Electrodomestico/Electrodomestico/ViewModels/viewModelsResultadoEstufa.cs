@@ -8,21 +8,15 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
-<<<<<<< HEAD
 using Xamarin.Forms;
-=======
->>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Electrodomestico.ViewModels
 {
     public class viewModelsResultadoEstufa : INotifyPropertyChanged
     {
-<<<<<<< HEAD
         public Command SalirEstufa { get; }
 
-=======
->>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
         private Estufa resultadoEstufa;
         public viewModelsResultadoEstufa()
         {
@@ -39,8 +33,7 @@ namespace Electrodomestico.ViewModels
             }
             catch (FileNotFoundException)
             {
-<<<<<<< HEAD
-
+                
             }
 
 
@@ -53,14 +46,8 @@ namespace Electrodomestico.ViewModels
             // Cerrar la aplicación
             System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
         }
-
-        public Estufa ResultadoEstufa
-=======
-                
-            }
-        }
+    
             public Estufa ResultadoEstufa
->>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
         {
             get => resultadoEstufa;
             set
@@ -71,11 +58,7 @@ namespace Electrodomestico.ViewModels
         public ObservableCollection<Estufa> listaEstufa { get; set; } = new ObservableCollection<Estufa>();
 
         public event PropertyChangedEventHandler PropertyChanged;
-<<<<<<< HEAD
-
-=======
      
->>>>>>> e181ab3b14fb93811f6eb824f66127bcbcea8792
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

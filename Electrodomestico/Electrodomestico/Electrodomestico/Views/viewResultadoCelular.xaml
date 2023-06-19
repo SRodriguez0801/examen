@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Electrodomestico.Views.viewResultadoCelular"
              xmlns:local="clr-namespace:Electrodomestico.ViewModels">
-
+    
     <ContentPage.BindingContext>
         <local:ViewModelsResultadoCelular></local:ViewModelsResultadoCelular>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-
+        
         <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
             <Label Text="Resultado celular"  FontSize="20"  TextColor="Black" FontAttributes="Bold"   ></Label>
             <CollectionView  
@@ -22,15 +22,15 @@
                                 <RowDefinition Height="Auto"></RowDefinition>
                                 <RowDefinition Height="Auto"></RowDefinition>
                             </Grid.RowDefinitions>
-
-
+                            
+                                
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
 
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-
+                            
                             <Label Text="Nombre" Grid.Row="0" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue" ></Label>
 
@@ -42,29 +42,29 @@
 
                             <Label Text="Precio Venta" Grid.Row="3" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding PrecioVenta}" Grid.Row="3" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue"  ></Label>
-
+                            
                             <Label Text="Sistema Operativo" Grid.Row="4" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding SistemaOperativo}" Grid.Row="4" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue"  ></Label>
 
                             <Label Text="Operador Red" Grid.Row="5" Grid.Column="0" FontSize="18" FontAttributes="Bold"  TextColor="Black"  Margin="0,0,0,39"/>
                             <Label Text="{Binding OperadorRed}" Grid.Row="5" Grid.Column="1" FontSize="18" FontAttributes="Bold" TextColor="Blue"  ></Label>
 
-
-
+                           
+                            
                         </Grid >
-
-
+                        
+                        
                     </DataTemplate>
-
-
+                    
+                    
                 </CollectionView.ItemTemplate>
 
             </CollectionView>
-
+            
             <Button Command="{Binding SalirCelular}" Grid.Row="11" Grid.Column="1" Text="Salir" FontSize="18" BackgroundColor="Black" TextColor="White" />
 
 
         </StackLayout>
     </ContentPage.Content>
-
+    
 </ContentPage>
