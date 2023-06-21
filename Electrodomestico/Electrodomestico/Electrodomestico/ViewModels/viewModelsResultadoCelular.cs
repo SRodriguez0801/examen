@@ -16,6 +16,7 @@ namespace Electrodomestico.ViewModels
 
         
         public Command SalirCelular { get; }
+  
 
         public ViewModelsResultadoCelular()
         {
@@ -35,11 +36,15 @@ namespace Electrodomestico.ViewModels
                 Application.Current.MainPage.DisplayAlert("Error", "Error cargando Lista de Celulares", "ok");
             }
 
+           
             
 
-            SalirCelular = new Command(Salir);
+        SalirCelular = new Command(Salir);
 
         }
+        
+
+
 
         public void Salir()
         {
